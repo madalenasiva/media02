@@ -1,0 +1,99 @@
+
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/* passo1: criar o conteudo*/
+.pagina {
+    display: grid;
+    grid-template-areas:
+        "cabecalho"
+        "menuPrincipal"
+        "conteudo"
+        "conteudoExtra"
+        "rodape";    
+}
+
+.cabecalho {
+    
+    grid-area: "cabecalho";
+    background-color: rgb(86, 81, 84);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.cabecalho > h1 {
+    text-align: center;
+    width: 100%;
+    color: black
+
+}
+
+
+.menuPrincipal {
+    grid-area: "menuPrincipal";
+    color: black;
+    background-color: darkred; 
+    
+}
+.intensMenu {
+    flex-direction: row;
+    justify-content: space-around;
+}
+.conteudo {
+    grid-area: "conteudo";
+    background-color: purple;
+    color: black;
+    
+}
+.conteudoExtra {
+    grid-area: "conteudoExtra";
+    color: rgb(113, 78, 78);
+    background-color:chocolate;   
+
+}
+
+.rodape {
+    grid-area: "rodape";
+    color: black;
+    background-color: tomato;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+
+ .pagina {    
+        grid-template-areas:
+            "cabecalho cabecalho"
+            "menuPrincipal menuPrincipal"
+            "conteudo conteudo"
+            "conteudoExtra  conteudoExtra"
+            "rodape rodape";
+            grid-template-columns: 4fr 2fr;
+    }
+
+    .cabecalho {
+        flex-direction: row;
+    }
+
+    .intensMenu {
+        flex-direction: row;
+    }
+ 
+}
+
+@media screen and (min-width: 1280px) {
+    .pagina {    
+        grid-template-areas:
+            "cabecalho cabecalho cabecalho"
+            "menuPrincipal conteudo conteudoExtra"
+            "rodape rodape rodape";
+            grid-template-columns: 1fr 4fr 1.5fr;
+    }
+   
+
+} 
